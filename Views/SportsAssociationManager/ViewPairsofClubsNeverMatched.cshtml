@@ -1,0 +1,48 @@
+﻿@using System.Data
+@model MyModel
+
+@{
+    ViewData["Title"] = "ViewPairsofClubsNeverMatched";
+}
+
+<h1>ViewPairsofClubsNeverMatched</h1>
+
+
+
+
+
+<table class="table table table-bordered tabletable-striped" style=" width:100%">
+    <thead>
+        <tr>
+
+            <th>
+                 Club 1
+            </th>
+
+            <th>
+                 Club 2
+            </th>
+
+
+        </tr>
+    </thead>
+
+    <tbody @foreach(DataRow row in Model.Data.Rows)
+           {
+      <tr>
+
+            <td width="50%">
+                @row["CLUB1"]
+            </td>
+
+            <td width="50%">
+                @row["CLUB2"]
+
+            </td>
+
+           
+
+
+    </tr>
+      }
+        </tbody>

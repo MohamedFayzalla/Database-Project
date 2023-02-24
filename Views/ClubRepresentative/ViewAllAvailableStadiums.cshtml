@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "ViewAllAvailableStadiums";
+}
+
+<h1>ViewAllAvailableStadiums</h1>
+
+
+
+@if (TempData["failed"] != null)
+{
+    <h2>@TempData["failed"]</h2>
+}
+
+
+@using (Html.BeginForm("ViewAllAvailableStadiums", "ClubRepresentative"))
+{
+
+
+
+
+
+    <div class="form-group">
+        <label>Time</label>
+        <input type="datetime-local" name="time" id = "time" class="form-control" placeholder="Time">
+    </div>
+
+
+
+    <br>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+}
+
+
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
+
+

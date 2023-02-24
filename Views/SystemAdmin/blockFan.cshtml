@@ -1,0 +1,45 @@
+﻿
+
+@{
+    ViewData["Title"] = "blockFan";
+}
+
+<h1>blockFan</h1>
+
+@if (TempData["failed"] != null)
+{
+    <h2>@TempData["failed"]</h2>
+}
+
+
+@using (Html.BeginForm("blockFan", "SystemAdmin"))
+{
+
+
+
+
+
+    <div class="form-group">
+        <label>FAN NATIONAL ID</label>
+        <input type="text" name="NationalId" class="form-control" placeholder="National Id">
+    </div>
+
+
+
+
+    <br>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+}
+
+
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
+
+

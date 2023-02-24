@@ -1,0 +1,76 @@
+﻿@using System.Data
+@model MyModel
+
+@{
+    ViewData["Title"] = "DisplayMatchesAvailable";
+}
+
+<h1>DisplayMatchesAvailable</h1>
+
+
+
+
+
+
+<table class="table table table-bordered tabletable-striped" style=" width:100%">
+    <thead>
+        <tr>
+
+            <th>
+                Host Club Name
+            </th>
+
+            <th>
+                Guest Club Name
+            </th>
+
+            <th>
+                Match Start Time
+            </th>
+
+            <th>
+                Hosting Stadium NAME
+            </th>
+
+            <th>
+                 Stadium Location
+            </th>
+
+
+        </tr>
+    </thead>
+
+    <tbody @foreach(DataRow row in Model.Data.Rows)
+           {
+      <tr>
+
+            <td width="50%">
+                @row["host_club_name"]
+            </td>
+
+            <td width="50%">
+                @row["guest_club_name"]
+            </td>
+
+             <td width="50%">
+                @row["starting_time_match"]
+            </td>
+
+            <td width="50%">
+                @row["stadium_name_hosting_match"]
+            </td>
+
+            <td width="50%">
+                @row["stadium_location_hosting_match"]
+            </td>
+            <td>
+               
+               @* asp-route-id-hostClubName="@row["host_club_name"]" asp-route-id-guestClubName="@row["guest_club_name"]" asp-route-id-startTimeMatch="@row["starting_time_match"]"*@
+                <input type="button" class="btn btn-outline-success" value="purchase Ticket" onclick="window.location='@Url.Action("PurchaseTicket","Fan",new {hostClubName=@row["host_club_name"],guestClubName=@row["guest_club_name"],startTimeMatch=@row["starting_time_match"]})'"/>
+                
+            </td>
+
+
+    </tr>
+      }
+        </tbody>

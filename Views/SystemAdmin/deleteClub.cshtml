@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "deleteClub";
+}
+
+<h1>deleteClub</h1>
+
+
+@if (TempData["failed"] != null)
+{
+    <h2>@TempData["failed"]</h2>
+}
+
+
+@using (Html.BeginForm("deleteClub", "SystemAdmin"))
+{
+
+
+
+
+
+    <div class="form-group">
+        <label>Club Name</label>
+        <input type="text" name="clubName" class="form-control" placeholder="Name">
+    </div>
+
+
+    
+
+
+    <br>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+}
+
+
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
+

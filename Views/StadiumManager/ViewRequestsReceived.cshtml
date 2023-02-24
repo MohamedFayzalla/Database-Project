@@ -1,0 +1,83 @@
+﻿@using System.Data
+@model MyModel
+
+
+@{
+    ViewData["Title"] = "ViewRequestsReceived";
+}
+
+<h1>ViewRequestsReceived</h1>
+
+
+
+
+
+
+<table class="table table table-bordered tabletable-striped" style=" width:100%">
+    <thead>
+        <tr>
+
+            <th>
+                Name of the sending club Representative
+            </th>
+
+            <th>
+                Host club Name
+            </th>
+
+            <th>
+                Guest Club Name
+            </th>
+
+            <th>
+                Match Start Time
+            </th>
+
+            <th>
+                Match End Time
+            </th>
+            <th>
+                Status of Request
+            </th>
+
+
+        </tr>
+    </thead>
+
+    <tbody @foreach(DataRow row in Model.Data.Rows)
+           {
+      <tr>
+
+            <td width="50%">
+                @row["CR_NAME"]
+            </td>
+
+            <td width="50%">
+                @row["G_NAME"]
+
+            </td>
+
+             <td width="50%">
+                @row["H_NAME"]
+            </td>
+
+            <td width="50%">
+                @row["M_START_TIME"]
+
+            </td>
+
+            <td width="50%">
+                @row["M_END_TIME"]
+
+            </td>
+
+            <td width="50%">
+                @row["Status_of_request"]
+
+            </td>
+
+
+
+    </tr>
+      }
+        </tbody>

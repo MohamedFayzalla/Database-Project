@@ -1,0 +1,45 @@
+﻿
+@model SystemAdmin
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+
+@*this should be checked later system admin must have a username *@
+
+<form asp-controller="SystemAdmin" asp-action="SignUp" method="post">
+    
+
+    <div class="form-group">
+        <label asp-for="SuperId">Username</label>
+        <input asp-for="SuperId" class="form-control"  aria-describedby="emailHelp" placeholder="Enter username">
+        <span asp-validation-for="SuperId" class"test-danger"></span>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your information with anyone else.TRUST US:)</small>
+    </div>
+
+
+
+
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control"  placeholder="Name">
+    </div>
+  
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
+
+        

@@ -1,0 +1,55 @@
+﻿
+@model  ClubRepresentative;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+
+<form asp-action="SignUp" method="post">
+
+
+
+    <div class="form-group">
+        <label asp-for="SuperId">Username</label>
+        <input asp-for="SuperId" class="form-control"  placeholder="Enter username">
+        <span asp-validation-for="SuperId" class="test-danger"></span>
+        
+    </div>
+
+
+
+    <div class="form-group">
+        <label asp-for="Name" >Name</label>
+        <input asp-for="Name" class="form-control"  placeholder="Name">
+    </div>
+
+   
+
+
+    <div class="form-group">
+        <label asp-for="ClubId">Club Name</label>
+        <input asp-for="ClubId" class="form-control"  placeholder="Club">
+        <span asp-validation-for="SuperId" class="test-danger"></span>
+    </div>
+
+
+
+    <br>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
+
+    

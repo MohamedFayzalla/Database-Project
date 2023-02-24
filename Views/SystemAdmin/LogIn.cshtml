@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "LogIn";
+}
+
+<h1>System Admin</h1>
+
+<div class="d-grid gap-2">
+    <a asp-controller="SystemAdmin" asp-action="addClub" button type="button" class="btn btn-outline-dark">ADD CLUB</a>
+    <a asp-controller="SystemAdmin" asp-action="addStadium"  button type="button" class="btn btn-outline-dark">ADD STADIUM</a>
+    <a asp-controller="SystemAdmin" asp-action="deleteClub" button type="button" class="btn btn-outline-danger">DELETE CLUB</a>
+    <a asp-controller="SystemAdmin" asp-action="deleteStadium"  button type="button" class="btn btn-outline-danger">DELETE STADIUM</a>
+    <a asp-controller="SystemAdmin" asp-action="blockFan" button type="button" class="btn btn-outline-danger">BLOCK FAN</a>
+</div>

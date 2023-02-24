@@ -1,0 +1,54 @@
+﻿@using System.Data
+@model MyModel
+
+
+@{
+    ViewData["Title"] = "displayStadiums";
+}
+
+<h1>displayStadiums</h1>
+
+
+
+
+
+<table class="table table table-bordered tabletable-striped" style=" width:100%">
+    <thead>
+        <tr>
+
+            <th>
+               Stadium Name
+            </th>
+
+            <th>
+                Location
+            </th>
+
+            <th>
+                Capcity
+            </th>
+
+
+        </tr>
+    </thead>
+
+    <tbody @foreach(DataRow row in Model.Data.Rows)
+           {
+      <tr>
+
+            <td width="50%">
+                @row["STADIUM_NAME"]
+            </td>
+
+            <td width="50%">
+                @row["STADIUM_LOCATION"]
+
+            </td>
+
+             <td width="50%">
+                @row["STADIUM_CAPACITY"]
+            </td>
+
+    </tr>
+      }
+        </tbody>

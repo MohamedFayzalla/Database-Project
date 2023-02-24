@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewData["Title"] = "Fan";
+    
+}
+
+<h1>Fan</h1>
+
+
+@if (TempData["failed"] != null)
+{
+    <h2>@TempData["failed"]</h2>
+}
+
+
+@using (Html.BeginForm("Fan", "SignUp"))
+{
+
+    <div class="form-group">
+        <label>Username</label>
+        <input class="form-control" name="username" placeholder="Enter username">
+
+        <small id="emailHelp" class="form-text text-muted">We'll never share your information with anyone else.TRUST US:)</small>
+    </div>
+
+
+
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" placeholder="password">
+    </div>
+
+
+
+    <div class="form-group">
+        <label>Your Name</label>
+        <input class="form-control" name="name" placeholder="Name">
+    </div>
+
+
+
+
+    <div class="form-group">
+        <label>National Id Number</label>
+        <input  class="form-control" name="nationalId" id="nationalId"  placeholder="national id number">
+    </div>
+
+
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input type="number" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="phone number">
+    </div>
+
+
+
+    <div class="form-group">
+        <label>Birthdate</label>
+        <input type="datetime-local" name="birthdate" id="birthdate" class="form-control" placeholder="Birthdate">
+    </div>
+
+
+
+    <div class="form-group">
+        <label>Address</label>
+        <input class="form-control" name="address" placeholder="address">
+    </div>
+
+
+    <br>
+    <button type="submit" class="btn btn-primary">Register</button>
+
+
+
+
+
+
+
+}
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }

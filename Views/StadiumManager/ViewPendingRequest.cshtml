@@ -1,0 +1,89 @@
+﻿@using System.Data
+@model MyModel
+
+
+
+
+@{
+    ViewData["Title"] = "ViewPendingRequest";
+}
+
+<h1>ViewPendingRequest</h1>
+
+
+
+
+
+
+
+<table class="table table table-bordered tabletable-striped" style=" width:100%">
+    <thead>
+        <tr>
+
+            <th>
+                Name of the sending club Representative
+            </th>
+
+            <th>
+                 Guest Club Name
+            </th>
+
+            <th>
+                Host Club Name
+            </th>
+
+            <th>
+                Match Start Time
+            </th>
+
+
+            <th>
+                Match End Time
+            </th>
+
+
+        </tr>
+    </thead>
+
+    <tbody @foreach(DataRow row in Model.Data.Rows)
+           {
+      <tr>
+
+           <td width="50%">
+                @row["CR_NAME"]
+            </td>
+
+            <td width="50%">
+                @row["G_NAME"]
+
+            </td>
+
+             <td width="50%">
+                @row["H_NAME"]
+            </td>
+
+            <td width="50%">
+                @row["M_START_TIME"]
+
+            </td>
+
+            <td width="50%">
+                @row["M_END_TIME"]
+
+            </td>
+
+
+             <td>
+                <input type="button" class="btn btn-outline-success" value="accept request" onclick="window.location='@Url.Action("acceptRequest","StadiumManager",new {hostClubName=@row["H_NAME"],guestClubName=@row["G_NAME"],time=@row["M_START_TIME"]})'"/>
+            </td>
+
+            
+             <td>
+                <input type="button" class="btn btn-outline-danger" value="reject request" onclick="window.location='@Url.Action("rejectRequest","StadiumManager",new {hostClubName=@row["H_NAME"],guestClubName=@row["G_NAME"],time=@row["M_START_TIME"]})'"/>
+            </td>
+
+
+
+    </tr>
+      }
+        </tbody>

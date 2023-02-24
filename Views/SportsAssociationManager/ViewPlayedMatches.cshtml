@@ -1,0 +1,61 @@
+﻿@using System.Data
+@model MyModel
+@{
+    ViewData["Title"] = "ViewPlayedMatches";
+}
+
+<h1>ViewPlayedMatches</h1>
+
+
+
+
+<table class="table table table-bordered tabletable-striped" style=" width:100%">
+    <thead>
+        <tr>
+
+            <th>
+                Host Club Name
+            </th>
+
+            <th>
+                Guest club name
+            </th>
+
+            <th>
+                Start time match
+            </th>
+
+            <th>
+                End time match
+            </th>
+
+
+        </tr>
+    </thead>
+
+    <tbody @foreach(DataRow row in Model.Data.Rows)
+           {
+      <tr>
+
+            <td width="50%">
+                @row["host_club_name"]
+            </td>
+
+            <td width="50%">
+                @row["guest_club_name"]
+
+            </td>
+
+             <td width="50%">
+                @row["start_time_match"]
+            </td>
+
+            <td width="50%">
+                @row["end_time_match"]
+
+            </td>
+
+
+    </tr>
+      }
+        </tbody>

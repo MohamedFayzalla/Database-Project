@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "LogIn";
+}
+
+<h1>Sports Association Manager</h1>
+
+@if (TempData["SignUp"]!=null)
+{
+    <h2>@TempData["SignUp"]</h2>
+}
+
+
+
+<div class="d-grid gap-2">
+    <a asp-action="addMatch" button type="button" class="btn btn-outline-dark">ADD MATCH</a>
+    <a asp-action="deleteMatch" button type="button" class="btn btn-outline-danger">DELETE MATCH</a>
+    <a asp-action="ViewAllUpcomingMatches" button type="button" class="btn btn-outline-primary">VIEW ALL UPCOMING MATCHES</a>
+    <a asp-action="ViewPlayedMatches" button type="button" class="btn btn-outline-primary">VIEW ALL PLAYED MATCHES</a>
+    <a asp-action="ViewPairsofClubsNeverMatched" button type="button" class="btn btn-outline-primary">VIEW CLUB PAIRS NEVER SCHEDULED TO PLAY EACH OTHER</a>
+
+    @*<a asp-action="ViewPairsofClubsNeverMatched" asp-route="" class="btn btn-outline-primary">VIEW CLUB PAIRS NEVER SCHEDULED TO PLAY EACH OTHER</a>
+    *@
+
+</div>
